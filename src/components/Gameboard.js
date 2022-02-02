@@ -9,7 +9,7 @@ import Card from './Card';
 
 const Gameboard = () => {
 
-  const [cardCount, setCardCount] = useState(2);
+  const [cardCount, setCardCount] = useState(10);
 
   const updateCardCount = (count) => {
     setCardCount(count.target.value)
@@ -22,7 +22,7 @@ const Gameboard = () => {
   const displayCards = () => {
     let cardArray = []
     for (let i = 0; i < cardCount; i++) {
-      cardArray.push(<Card />)
+      cardArray.push(<Card key={i}/>)
     };
     return (
       <div>
@@ -38,7 +38,9 @@ const Gameboard = () => {
         <Input sendValue={updateCardCount}/>
         <Button />
       </div>
-      {displayCards()}
+      <div id="cards-container">
+        {displayCards()}
+      </div>
     </div>
   )
 
