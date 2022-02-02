@@ -12,6 +12,7 @@ const Gameboard = () => {
   const [cardCount, setCardCount] = useState(5);
   const [imgs, setImages] = useState([]);
 
+  // Update the card count based on what the user types in the input box
   const updateCardCount = (count) => {
     setCardCount(count.target.value)
   };
@@ -43,7 +44,6 @@ const Gameboard = () => {
       cardArray.push(<Card key={i} imgUrl={imgUrl}/>)
       cardArray.push(<Card key={i+cardCount} imgUrl={imgUrl}/>)
     };
-
     let shuffledCardArray = cardArray.sort((a,b) => 0.5 - Math.random())
     
     return (
